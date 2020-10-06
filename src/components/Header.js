@@ -4,19 +4,29 @@
      }
  */
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-const containerStyle = {
-   marginTop: 30,
-   backgroundColor: '#afc7cc',
-    // [propriedades CSS] : [Valor]
-};
-
-const Header  = (props) => (
-    <View style={containerStyle}>
-        <Text>Contatos</Text>
+const Header = (props) => (
+    <View style={style.container}>
+        <Text style={style.title}>{ props.title }</Text>
     </View>
-);  
+);
+
+// StyleSheet
+const style = StyleSheet.create({
+    container: {
+        marginTop: 30,
+        backgroundColor: '#afc7cc',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    title: {
+        fontSize: 50,
+    }
+})
+
+
+
 
 export default Header; 
