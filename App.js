@@ -4,6 +4,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Header from './src/components/Header';
+import PeopleList from './src/components/PeopleList';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -29,20 +30,16 @@ export default class App extends React.Component {
   }
 
   renderList() {
-    // pessoas []
-    const textElements = this.state.peoples.map(people => {
-      const { first } = people.name;
-      return <Text key={people.name.first}>{first}</Text>
-    })
-    return textElements;
+
   }
 
   render() {
     return (
       <View>
         <Header title="Contatos" />
-        { this.renderList()}
-        <Header title="Reutilizando Header" />
+        <PeopleList peoples={this.state.peoples}>  </PeopleList>
+        {/* { this.renderList()} */}
+        {/* <Header title="Reutilizando Header" /> */}
       </View>
     );
   }
